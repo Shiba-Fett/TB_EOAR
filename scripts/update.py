@@ -50,7 +50,7 @@ for row in range(number_of_rows):
     outstr += '  <div class="w3-row-padding">\n'+\
               '    <div class="w3-third w3-container w3-margin-bottom">\n'
     if row == 0:
-        outstr += '      <a href="players/player.html"><img src="media/591.jpeg" alt="Players" style="width:100%" class="w3-hover-opacity"> </a>\n'+\
+        outstr += '      <a href="players/player.html"><img src="media/darth-eoar.jpg" alt="Players" style="width:100%" class="w3-hover-opacity"> </a>\n'+\
         '      <div class="w3-container w3-white">\n'+\
         '<p><b>Player Wave Count</b></p>\n'+\
         '<p>Compare your wave count against other members and guild average.</p>\n'+\
