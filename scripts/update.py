@@ -1,8 +1,11 @@
-from tbdata import Player
-from tbdata import TBfile
+"""
+Main script for updating all tb data
+"""
+import sys
+import os
 import numpy as np
-import sys, os
 
+options = sys.argv[1:]
 
 infile = open("../input_files/index.html.in", "r")
 filedata = infile.read()
@@ -50,7 +53,7 @@ for row in range(number_of_rows):
     outstr += '  <div class="w3-row-padding">\n'+\
               '    <div class="w3-third w3-container w3-margin-bottom">\n'
     if row == 0:
-        outstr += '      <a href="players/player.html"><img src="media/darth-eoar.jpg" alt="Players" style="width:100%" class="w3-hover-opacity"> </a>\n'+\
+        outstr += '      <a href="players/player.html"><img src="media/591.jpeg" alt="Players" style="width:100%" class="w3-hover-opacity"> </a>\n'+\
         '      <div class="w3-container w3-white">\n'+\
         '<p><b>Player Wave Count</b></p>\n'+\
         '<p>Compare your wave count against other members and guild average.</p>\n'+\
@@ -74,7 +77,12 @@ filedata = filedata.replace("$$INPUTS",outstr)
 outfile.write(filedata)
 outfile.close()
 
-
-os.system("python3 tbdata.py " + str(number_tbs))
+if "report" in options:
+    os.system("python3 tbdata.py " + str(number_tbs) + " report")
+else:
+    os.system("python3 tbdata.py " + str(number_tbs))
 os.system("python3 reva.py " + str(number_tbs))
-os.system("python3 player.py " + str(number_tbs))
+if "trendline" in options:
+    os.system("python3 player.py " + str(number_tbs) + " trendline")
+else:
+    os.system("python3 player.py " + str(number_tbs))
