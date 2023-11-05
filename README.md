@@ -42,3 +42,4 @@ Track Territory Battle (TB) performance metrics over time.
 4. **Verify Execution**:
     - After running the script for the first time, a list of player names should be displayed. 
     - If you see this list, the script has executed successfully.
+    - No List of names will show on the second time its run. 
